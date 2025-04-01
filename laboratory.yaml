@@ -1,0 +1,140 @@
+id: 59Vh5iCu26c7r57R
+createdBy: f9bb171c8n9EUe
+dateCreated: 1743500498733
+name: Introduction to MicroPython with Microbit V2
+meta:
+  logo: ''
+  description: >-
+    A high school course introducing programming with MicroPython on the
+    Microbit V2 board. Explore the board's API, sensors, sound, and display
+    through interactive examples.
+  selfAssign: false
+  defaultNumberOfRooms: 0
+members:
+  teacher: []
+  student: []
+modules:
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config: >-
+      # Microbit V2 MicroPython Intro
+
+
+      Welcome to the Microbit V2 MicroPython course. In this module, you will
+      receive a general overview of the course content including:
+
+
+      - **API Overview:** Understand how to interact with the board’s
+      functionalities.
+
+      - **Sensors:** Learn about accelerometers, temperature sensors, and more.
+
+      - **Sound & Display:** Discover how to program the board to produce sound
+      and display images.
+
+
+      This course is designed to provide you with both theoretical insights and
+      practical examples to get started with MicroPython on the Microbit V2.
+
+
+      <iframe style="width: 100%; aspect-ratio: 16 / 9"
+      src="https://www.youtube-nocookie.com/embed/PITLKocdY14?si=P6EQvXpsCICqCHo6"
+      title="YouTube video player" frameborder="0" allow="accelerometer;
+      autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+      web-share" referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: lobby
+    width: full
+    height: tall
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config: ''
+    studentConfig: >-
+      # MicroPython with Microbit V2: Hands-on Examples
+
+      Welcome students! In this module, you'll explore practical examples that
+      demonstrate how to interact with your Microbit V2 board using MicroPython.
+
+      ## Example 1: Basic Arithmetic and Display
+
+      ```python
+      
+      # Perform a simple arithmetic operation and display the result
+      
+      result = 12 + 2
+      
+      print("The result is:", result)
+      
+      ```
+
+      ## Example 2: Display an Image
+
+      ```python
+      
+      from microbit import 
+      
+
+      display.show(Image.HEART)
+      
+      ```
+
+      ## Example 3: Using the Accelerometer Sensor
+
+      ```python
+      
+      from microbit import *
+      
+      
+      while True:
+          # Get the X-axis reading from the accelerometer
+          x_reading = accelerometer.get_x()
+
+          print("X-axis:", x_reading)
+
+          sleep(1000)
+      ```
+
+      Experiment with these examples to see how the Microbit V2 reacts to your
+      code!
+    teacherConfig: >-
+      # Teacher Settings for MicroPython Module
+
+
+      **Guidance Tips:**
+
+
+      - **Demonstration:** Walk through each example and explain the purpose of
+      each code block.
+
+      - **Interaction:** Encourage students to modify values or add new
+      functionality to see live results.
+
+      - **Discussion:** Highlight how sensor data, display outputs, and simple
+      arithmetic can be combined for more complex projects.
+
+
+      Make sure to check that every student understands the fundamental concepts
+      before moving on.
+    stationConfig: ''
+    showInCustom: station
+    width: full
+    height: tall
+  - url: https://edrys-labs.github.io/module-serial/index.html
+    config: ''
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: station
+    width: full
+    height: tall
+  - url: https://edrys-labs.github.io/module-station-stream/index.html
+    config: ''
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig:
+      video: true
+      audio: false
+    showInCustom: station
+    width: half
+    height: medium
