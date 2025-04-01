@@ -49,8 +49,7 @@ modules:
     width: full
     height: tall
   - url: https://edrys-labs.github.io/module-markdown-it/index.html
-    config: ''
-    studentConfig: >-
+    config: >-
       # MicroPython with Microbit V2: Hands-on Examples
 
       Welcome students! In this module, you'll explore practical examples that
@@ -97,6 +96,7 @@ modules:
 
       Experiment with these examples to see how the Microbit V2 reacts to your
       code!
+    studentConfig: ''
     teacherConfig: >-
       # Teacher Settings for MicroPython Module
 

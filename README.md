@@ -23,9 +23,8 @@ By the end, you'll have the knowledge and skills to implement your own collabora
     --{{0}}--
 Before we dive into the details, let's take a look at what we'll cover in this workshop.
 
-<section>
-
-### Workshop Sections
+Workshop Sections
+-----------------
 
 1. **Introduction to edrys-Lite**
 
@@ -57,8 +56,6 @@ Before we dive into the details, let's take a look at what we'll cover in this w
    * Module architecture
    * Edrys API fundamentals
    * Building collaborative interfaces
-
-</section>
 
     --{{1}}--
 This workshop is designed to be hands-on, so I encourage you to follow along with the examples and try things out as we go.
@@ -631,30 +628,77 @@ Step 6: Create a Programming Lab
 
    ``` yaml
    |-
-     # Programming Lab Instructions
+     # Microbit V2 MicroPython Intro
+
+     Welcome to the Microbit V2 MicroPython course. In this module, you will receive a general overview of the course content including:
+
+     - **API Overview:** Understand how to interact with the board’s functionalities.
+     - **Sensors:** Learn about accelerometers, temperature sensors, and more.
+     - **Sound & Display:** Discover how to program the board to produce sound and display images.
+
+     This course is designed to provide you with both theoretical insights and practical examples to get started with MicroPython on the Microbit V2.
+
+     <iframe style="width: 100%; aspect-ratio: 16 / 9" src="https://www.youtube-nocookie.com/embed/PITLKocdY14?si=P6EQvXpsCICqCHo6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
    ```
 
 2. Add another markdown-it module for instructions
 
    * Configure it to show in the station
    * Add instructions in markdown format
-   * Add the "General Settings" to show the module in the lobby
+   * Add the "General Settings" to show the module in the station
 
-   ``` yaml
+   ```` yaml
    |-
-     # Programming Lab Instructions
+     # MicroPython with Microbit V2: Hands-on Examples
+
+     Welcome students! In this module, you'll explore practical examples that demonstrate how to interact with your Microbit V2 board using MicroPython.
+
+     ## Example 1: Basic Arithmetic and Display
+
+     ```python
+     # Perform a simple arithmetic operation and display the result
+     result = 12 + 2
+     print("The result is:", result)
+     ```
+
+     ## Example 2: Display an Image
+
+     ```python
+     from microbit import 
+
+     display.show(Image.HEART)
+     ```
+
+     ## Example 3: Using the Accelerometer Sensor
+
+     ```python
+     from microbit import *
+
+     while True:
+         # Get the X-axis reading from the accelerometer
+         x_reading = accelerometer.get_x()
+
+         print("X-axis:", x_reading)
+
+         sleep(1000)
    ```
+
+   Experiment with these examples to see how the Microbit V2 reacts to your code!
+   ````
 
 3. Add the module-station-stream webcam sharing
 
    * Configure it to show in station
    * Set the initial code template if needed
 
+   ``` yaml
+   video: true
+   audio: false
+   ```
+
 4. Add a module-serial module for running a terminal
 
    * Configure it to show in station
-
-5. Add a module-editor for collaborative coding
 
     --{{1}}--
 This basic setup creates a lab where students can read instructions, write code, and execute it to see the results.
@@ -717,14 +761,48 @@ Now that we've created and configured our basic lab, in the next section we'll e
 
 ``` yaml
 |-
-  # Hello World to all
+  # Publish Subscribe
   
-  This is a simple module for adding Markdown
+  Events can be sent to other modules using the publish-subscribe mechanism.
   
   <button onclick="Edrys.sendMessage('w', 'print(12 + 2)\r\n')">Send</button>
   
   <button onclick="Edrys.sendMessage('w', 'display.show(Image.HEART)\r\n')">Heart</button>
 ```
+
+### WebSerial API Overview
+
+    --{{0}}--
+To connect the micro:bit to edrys-Lite, we'll use the WebSerial API, which allows web applications to communicate with serial devices directly from the browser.
+
+Understanding WebSerial
+-----------------------
+
+* A modern web API for serial communication
+* Allows browsers to connect to USB devices
+* Requires user permission for security
+* Supported in Chrome, Edge, and other Chromium-based browsers
+* Enables bidirectional communication with hardware
+
+    --{{1}}--
+The WebSerial API is what makes it possible to program and communicate with the micro:bit directly from edrys-Lite without requiring any additional software installation, making the setup process much simpler for students.
+
+### Connecting micro:bit to edrys-Lite
+
+    --{{83}}--
+Now, let's walk through the process of connecting a micro:bit to edrys-Lite using the WebSerial API.
+
+      {{83}}
+### Step 1: Hardware Setup
+
+1. Connect the micro:bit v2 to your computer using a USB cable
+2. Ensure the micro:bit is recognized by your computer
+3. No additional drivers should be needed for most operating systems
+
+    --{{84}}--
+The micro:bit will appear as a USB storage device when first connected.
+We'll use the WebSerial API to communicate with the preinstalled MicroPython.
+
 
 ## Storing and Sharing Labs
 
@@ -1063,18 +1141,8 @@ Now, let's walk through the process of connecting a micro:bit to edrys-Lite usin
 
     --{{84}}--
 The micro:bit will appear as a USB storage device when first connected.
-We'll use this to load MicroPython onto the device before connecting it to edrys-Lite.
+We'll use the WebSerial API to communicate with the preinstalled MicroPython.
 
-      {{84}}
-### Step 2: Prepare the micro:bit with MicroPython
-
-1. Download the MicroPython firmware from [microbit.org](https://microbit.org/get-started/user-guide/python/)
-2. Drag and drop the firmware file onto the micro:bit USB drive
-3. The LED on the micro:bit will flash during the update
-4. Once complete, the micro:bit is ready for MicroPython programming
-
-    --{{85}}--
-Loading MicroPython onto the micro:bit enables us to use Python code to control all aspects of the device, making it accessible for students with varying programming experience.
 
 ## Setting Up the Terminal Module
 
