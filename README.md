@@ -18,6 +18,9 @@ Welcome to this comprehensive workshop on edrys-Lite!
 Throughout this session, we'll explore how to create, configure, and extend browser-based remote labs using edrys-Lite.
 By the end, you'll have the knowledge and skills to implement your own collaborative remote lab environments.
 
+[qr-code](https://www.figma.com/board/NSLzCguY308MqSR1kQ9Z0Z/Workshop-Ste2025?node-id=5-63&t=fyAeMj2CzzTKdW8e-1)
+
+    {{1}}
 !?[Magdeburg Industrial eLab](https://www.youtube.com/watch?v=bICfKRyKTwE)
 
 ## Workshop Overview
